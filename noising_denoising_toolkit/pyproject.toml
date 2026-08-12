@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ne-noise"
+version = "0.1.0"
+description = "Nepali-first noising & denoising toolkit: character/word/span/script-level noise, denoising pairs, and word -> character -> model transliteration."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "Nepali NLP Library Team" }]
+keywords = ["nepali", "devanagari", "noising", "denoising", "data-augmentation", "transliteration", "nlp", "low-resource"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic",
+    "Natural Language :: Nepali",
+]
+dependencies = []
+
+[project.optional-dependencies]
+lexicon = ["pandas>=1.0", "datasets>=2.0"]
+models = ["transformers>=4.30", "torch>=2.0"]
+demo = ["pandas>=1.0"]
+dev = ["pytest>=7.0"]
+
+[project.scripts]
+ne-noise = "ne_noise.__main__:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["ne_noise*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

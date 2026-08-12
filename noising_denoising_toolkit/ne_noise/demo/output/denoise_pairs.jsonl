@@ -1,0 +1,10 @@
+{"clean": "नेपालको राजधानी काठमाडौँ हो।", "noised": "नेपालको राजधानी काठमाडौँ हो।", "ops": ["code_mix", "word_permute"], "id": "23e7157939"}
+{"clean": "नेपालको राजधानी काठमाडौँ हो।", "noised": "नेपालको राजधानी काठमाडौँ ho।", "ops": ["code_mix"], "id": "77ebf148c1"}
+{"clean": "उनले विद्यालयमा नयाँ किताब पढे।", "noised": "उनले विद्यालयमा नयाँ किताब पढे।", "ops": ["span_corruption", "char_swap", "char_insertion"], "id": "1361b1a438"}
+{"clean": "उनले विद्यालयमा नयाँ किताब पढे।", "noised": "unale widyaalayamaa नयाँ kitaab पढे।", "ops": ["code_mix"], "id": "0cb46cbee6"}
+{"clean": "हाम्रो देशको संविधानले सबैलाई समान अधिकार दिन्छ।", "noised": "हाम्रो देशको संविधानले अधिकार समान दिन्छ।", "ops": ["word_dropout", "word_permute", "span_corruption"], "id": "92855ef818"}
+{"clean": "हाम्रो देशको संविधानले सबैलाई समान अधिकार दिन्छ।", "noised": "हाम्ो देशको संविधानले सबैलाई समान अधिकार दिनछ।", "ops": ["char_deletion"], "id": "8a40ecd69e"}
+{"clean": "शहरमा ट्राफिक जामको समस्या बढ्दो छ।", "noised": "<mask> जामको समस्या बढ्दो छ।", "ops": ["span_corruption"], "id": "cec2fdac68"}
+{"clean": "शहरमा ट्राफिक जामको समस्या बढ्दो छ।", "noised": "ट्राफिक जामको शहरमा समस्या बढ्दो छ।", "ops": ["homophone", "word_permute"], "id": "d05af5888c"}
+{"clean": "काठमाडौँबाट पोखरा जान करिब छ घण्टा लाग्छ।", "noised": "काठमडौँबाट पोखरा किब जान छ घण्टा लाग्छ।", "ops": ["keyboard_typo", "word_permute", "char_deletion"], "id": "c3029c51c9"}
+{"clean": "काठमाडौँबाट पोखरा जान करिब छ घण्टा लाग्छ।", "noised": "काठमाडौँबाट पोखरा jaan करिब छ घण्टा लाखग्छ।", "ops": ["code_mix", "char_insertion"], "id": "a3a708b1a5"}
