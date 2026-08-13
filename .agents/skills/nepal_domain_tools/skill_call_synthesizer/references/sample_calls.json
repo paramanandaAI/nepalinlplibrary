@@ -1,0 +1,38 @@
+[
+  {
+    "instruction": "आज NABIL को सेयर मूल्य कति छ?",
+    "tool_calls": [
+      {
+        "name": "get_nepse_quote",
+        "arguments": {
+          "symbol": "NABIL"
+        }
+      }
+    ],
+    "language": "ne"
+  },
+  {
+    "instruction": "What is the current weather and air quality index in Pokhara?",
+    "tool_calls": [
+      {
+        "name": "get_nepal_weather_aqi",
+        "arguments": {
+          "city": "Pokhara"
+        }
+      }
+    ],
+    "language": "en"
+  },
+  {
+    "instruction": "चितवन जिल्लामा कुन बाली लगाउन उपयुक्त हुन्छ?",
+    "tool_calls": [
+      {
+        "name": "query_crop_recommendation",
+        "arguments": {
+          "district": "Chitwan"
+        }
+      }
+    ],
+    "language": "ne"
+  }
+]

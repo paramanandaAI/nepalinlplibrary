@@ -1,0 +1,11 @@
+{
+  "entity_type": "stock",
+  "symbols": {
+    "NABIL": {"name": "Nabil Bank Limited", "sector": "Commercial Banks"},
+    "NTC": {"name": "Nepal Telecom", "sector": "Telecom"},
+    "GBIME": {"name": "Global IME Bank", "sector": "Commercial Banks"},
+    "NICA": {"name": "NIC Asia Bank", "sector": "Commercial Banks"},
+    "HDL": {"name": "Himalayan Distillery", "sector": "Manufacturing"},
+    "CIT": {"name": "Citizen Investment Trust", "sector": "Investment"}
+  }
+}

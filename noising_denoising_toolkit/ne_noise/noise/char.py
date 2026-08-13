@@ -80,6 +80,29 @@ def random_typo_injection(
     return "".join(chars)
 
 
+def matra_drop(text: str, p: float = 0.1, rng: Optional[random.Random] = None) -> str:
+    """Randomly drop Devanagari matras (vowel diacritics) with probability ``p``."""
+    r = _rng(rng)
+    matras = set(DEPENDENT_MATRAS)
+    out = []
+    for ch in text:
+        if ch in matras and r.random() < p:
+            continue
+        out.append(ch)
+    return "".join(out) if out else text
+
+
+def halanta_drop(text: str, p: float = 0.1, rng: Optional[random.Random] = None) -> str:
+    """Randomly drop Halanta ('्') from conjuncts with probability ``p``."""
+    r = _rng(rng)
+    out = []
+    for ch in text:
+        if ch == "्" and r.random() < p:
+            continue
+        out.append(ch)
+    return "".join(out)
+
+
 def inject_random_noise(
     text: str,
     noise_level: float = 0.1,
@@ -96,3 +119,4 @@ def inject_random_noise(
     t = random_char_insertion(t, p=p, rng=r)
     t = random_char_substitution(t, p=p, rng=r)
     return t
+

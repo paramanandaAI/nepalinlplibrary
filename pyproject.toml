@@ -1,0 +1,47 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "nepalinlplibrary"
+version = "0.1.0"
+description = "Agent-first Nepali Natural Language Processing (NLP) library, dataloader, and noising toolkit."
+readme = "README.md"
+authors = [
+    { name = "Paramananda Research Collective", email = "research@paramanandanlp.org" }
+]
+license = { text = "Apache-2.0" }
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Linguistic"
+]
+requires-python = ">=3.8"
+dependencies = [
+    "pyyaml>=6.0",
+    "requests>=2.28.0",
+    "tqdm>=4.64.0"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0"
+]
+models = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "datasets>=2.12.0"
+]
+
+[project.urls]
+Homepage = "https://github.com/paramanandanlp/nepalinlplibrary"
+Documentation = "https://github.com/paramanandanlp/nepalinlplibrary/tree/main/references"
+Repository = "https://github.com/paramanandanlp/nepalinlplibrary.git"
+"Bug Tracker" = "https://github.com/paramanandanlp/nepalinlplibrary/issues"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["nepalinlplibrary*", "ne_noise*"]

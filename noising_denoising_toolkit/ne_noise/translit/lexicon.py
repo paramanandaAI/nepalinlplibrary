@@ -5,6 +5,10 @@ Provides O(1) word lookup. Falls back to the character tier for out-of-dictionar
 words. A small sample lexicon ships in ``data/``; the full ~2.4M pair dataset is
 downloaded via ``ne_noise/scripts/download_word_transliteration.py`` (big data is
 kept outside the library).
+
+TODO (our_shared_notes/modules/transliteration/wordleve):
+- Add dynamic fallback path checking 'data/library_test/translit/nepali_roman_word.csv'
+  in the parent repository if local sample lexicon is used.
 """
 
 import csv

@@ -10,7 +10,14 @@ A collection of **Nepali-first** Natural Language Processing (NLP) toolkits, tex
 
 ```
 nepalinlplibrary/
-├── noising_denoising_toolkit/    # ne_noise: Nepali Noising, Denoising & Transliteration (Beta)
+├── .agents/skills/               # 13 consolidated agent skills (gemma4_ocr, local_ocr, validation, chhanda, NLTK, etc.)
+├── config.py                     # Layered DataConfig resolver (PARAMANANDA_DATA_PATH & ~/.paramananda/config.yaml)
+├── dataloader/                   # Dataset loader & YAML contract parser
+│   ├── spec.py                   # DatasetSpec parser (status, modality, language breakdown)
+│   ├── loader.py                 # DatasetLoader (discovers datasets/ YAMLs in data repo)
+│   ├── catalog.py                # CatalogManager (JSONL index exporter)
+│   └── cli.py                    # CLI tool (python -m nepalinlplibrary.dataloader)
+├── noising_denoising_toolkit/    # ne_noise: Nepali Noising, Denoising & Transliteration
 │   ├── ne_noise/                 # Core Python package
 │   │   ├── text/                 # Devanagari primitives, NFC normalization, ratio math
 │   │   ├── translit/             # Word -> Character -> Model 3-tier transliteration
@@ -22,16 +29,34 @@ nepalinlplibrary/
 │   ├── tests/                    # Pytest test suite (59 unit tests)
 │   ├── pyproject.toml            # Package configuration (ne-noise)
 │   └── PLAN.md                   # Architecture plan & roadmap
-├── library/                      # General-purpose Nepali NLP modules (OCR, segmentation, etc.)
-├── models/                       # Model architecture checkpoints & wrappers
-└── test/                         # Experimental prompts, benchmarks, & MCP tools
+├── library/                      # General-purpose Nepali NLP modules & dataloader alias
+├── references/                   # Research notes, linguistic findings & architecture docs
+├── scripts/                      # Data extraction & dataset download scripts
+└── tests/                        # Library test suite (12 unit tests; 71 total across library)
 ```
 
 ---
 
 ## Toolkits Overview
 
-### 1. `noising_denoising_toolkit` (`ne_noise`) — Beta
+### 1. `config` & `dataloader` Toolkits
+An agent-friendly dataset loader that resolves dataset paths dynamically via `PARAMANANDA_DATA_PATH` environment variable or `~/.paramananda/config.yaml`, parses declarative YAML contracts, tracks dataset status (`verified` vs `candidate`), and formats T5, Gemma 4, BERT, and Alpaca export templates.
+
+```python
+from nepalinlplibrary.config import _config
+from nepalinlplibrary.dataloader import DatasetLoader
+
+loader = DatasetLoader()
+
+# Discover verified datasets (92 total specs discovered)
+verified_specs = loader.list_datasets(verified_only=True)
+
+# Load dataset spec and apply model export templates (e.g. Gemma 4 / T5)
+spec = loader.get_spec("huggingface_Bibek1129_nepali_SQuAD")
+records = loader.load_dataset_records("huggingface_Bibek1129_nepali_SQuAD", template_type="gemma4")
+```
+
+### 2. `noising_denoising_toolkit` (`ne_noise`) — Beta
 A comprehensive toolkit for generating realistic Nepali text degradation (typos, homophone confusions, clitic detachment, code-mixing, span masking) and constructing supervised denoising training pairs.
 
 #### Quickstart Usage

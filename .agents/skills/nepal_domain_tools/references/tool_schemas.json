@@ -1,0 +1,59 @@
+[
+  {
+    "name": "get_nepse_quote",
+    "description": "Fetch current stock market price and volume for a NEPSE symbol.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "symbol": {"type": "string", "description": "NEPSE stock symbol e.g. NABIL, NTC"}
+      },
+      "required": ["symbol"]
+    }
+  },
+  {
+    "name": "get_nepal_weather_aqi",
+    "description": "Fetch weather and air quality index for a Nepalese city.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "city": {"type": "string", "description": "City name e.g. Kathmandu, Pokhara"}
+      },
+      "required": ["city"]
+    }
+  },
+  {
+    "name": "query_crop_recommendation",
+    "description": "Predict optimal crop varieties based on Nepalese district and elevation profile.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "district": {"type": "string", "description": "District name e.g. Solukhumbu, Kaski, Chitwan"}
+      },
+      "required": ["district"]
+    }
+  },
+  {
+    "name": "query_legal_cases",
+    "description": "Search court case metadata across Nepal Supreme Court and High Courts.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "court_level": {"type": "string", "enum": ["supreme", "high", "district"]},
+        "case_number": {"type": "string"}
+      }
+    }
+  },
+  {
+    "name": "predict_house_price",
+    "description": "Predict estimated house price in Nepal based on location, bedrooms, and area sqft.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "location": {"type": "string"},
+        "bedrooms": {"type": "integer"},
+        "area_sqft": {"type": "integer"}
+      },
+      "required": ["location", "bedrooms", "area_sqft"]
+    }
+  }
+]

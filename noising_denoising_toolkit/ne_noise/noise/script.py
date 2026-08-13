@@ -1,4 +1,9 @@
-"""Script-level noising: code-mixing and partial/full transliteration."""
+"""Script-level noising: code-mixing and partial/full transliteration.
+
+TODO (our_shared_notes/modules/hindi_english):
+- Implement hindi_cognate_swap(text, ratio, rng) using Hindi-Nepali cognate dictionaries
+  (e.g., 'विकास' <-> 'प्रगति', 'घर' <-> 'मकान') for Devanagari cross-lingual code-mixing.
+"""
 
 import random
 from typing import Optional

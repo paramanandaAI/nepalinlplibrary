@@ -1,0 +1,13 @@
+{
+  "entity_type": "geographic",
+  "provinces": ["Koshi Province", "Madhesh Province", "Bagmati Province", "Gandaki Province", "Lumbini Province", "Karnali Province", "Sudurpashchim Province"],
+  "districts": ["Bhojpur", "Solukhumbu", "Kathmandu", "Lalitpur", "Kaski", "Chitwan", "Rupandehi", "Morang"],
+  "landmarks": {
+    "arun_river": {"place_name": "Arun River Corridor", "category": "River landscape", "district": "Bhojpur", "province": "Koshi Province"},
+    "hatuwagadhi": {"place_name": "Hatuwagadhi Durbar", "category": "Fort and historical site", "district": "Bhojpur", "province": "Koshi Province"},
+    "salpa_pokhari": {"place_name": "Salpa Pokhari", "category": "Sacred lake", "district": "Bhojpur", "province": "Koshi Province"},
+    "sagarmatha_base_camp": {"place_name": "Sagarmatha Base Camp", "category": "Mountain viewpoint", "district": "Solukhumbu", "province": "Koshi Province"},
+    "pashupatinath": {"place_name": "Pashupatinath Temple", "category": "Religious site", "district": "Kathmandu", "province": "Bagmati Province"},
+    "phewatal": {"place_name": "Phewatal", "category": "Lake", "district": "Kaski", "province": "Gandaki Province"}
+  }
+}

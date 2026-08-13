@@ -9,13 +9,15 @@ import random
 from typing import Callable, Dict, List, Optional, Tuple
 
 from .char import (
+    halanta_drop,
     inject_random_noise,
+    matra_drop,
     random_char_deletion,
     random_char_insertion,
     random_char_substitution,
     random_char_swap,
 )
-from .homophone import substitute_homophones
+from .homophone import substitute_homonyms, substitute_homophones
 from .keyboard import keyboard_typo
 from .script import code_mix, transliterate_full, transliterate_random_words
 from .span import random_mask, sentence_permutation, span_corruption
@@ -33,8 +35,11 @@ NOISE_OPS: Dict[str, Dict] = {
     "char_insertion": {"fn": random_char_insertion, "defaults": {"p": 0.05}},
     "char_swap": {"fn": random_char_swap, "defaults": {"p": 0.05}},
     "char_substitution": {"fn": random_char_substitution, "defaults": {"p": 0.05}},
+    "matra_drop": {"fn": matra_drop, "defaults": {"p": 0.1}},
+    "halanta_drop": {"fn": halanta_drop, "defaults": {"p": 0.1}},
     "keyboard_typo": {"fn": keyboard_typo, "defaults": {"p": 0.05}},
     "homophone": {"fn": substitute_homophones, "defaults": {"p": 0.2}},
+    "homonym_confusion": {"fn": substitute_homonyms, "defaults": {"p": 0.2}},
     "word_dropout": {"fn": word_dropout, "defaults": {"ratio": 0.15}},
     "word_deletion": {"fn": word_deletion, "defaults": {"p": 0.1}},
     "word_permute": {"fn": word_permute, "defaults": {"ratio": 0.2}},

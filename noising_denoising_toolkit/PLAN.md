@@ -286,3 +286,20 @@ r = devanagari_ratio(apply_noising(text, "keyboard_typo", seed=1))  # compare ag
 - Core is stdlib-only; pandas/torch/transformers are optional extras.
 - Romanization default style `"nepali"` (colloquial) to match existing conventions
   and real-world romanized Nepali data.
+
+---
+
+## 15. Unaddressed Modules Backlog & TODO Tracker (`our_shared_notes/modules`)
+
+The following specialized submodules from `our_shared_notes/modules` are cataloged as TODOs for future releases to preserve `ne_noise`'s lightweight, pure-Python architecture:
+
+1. **`transliteration/indictranslit` (AI4Bharat IndicTrans2 Integration)**:
+   - **Location**: `ne_noise/translit/model.py` / `ne_noise/models/huggingface.py`
+   - **TODO**: Add optional lazy wrapper for `ai4bharat/IndicTrans2` neural model pipelines.
+2. **`transliteration/wordleve` (Full 2.4M-pair Word Lexicon Integration)**:
+   - **Location**: `ne_noise/translit/lexicon.py`
+   - **TODO**: Add optional external dataset fallback loading from `data/library_test/translit/nepali_roman_word.csv`.
+3. **`hindi_english/` (Hindi-Nepali Cognate Swaps & Multilingual Code-Mixing)**:
+   - **Location**: `ne_noise/noise/script.py`
+   - **TODO**: Implement `hindi_cognate_swap` operator to simulate Devanagari Hindi-Nepali cognate replacements.
+

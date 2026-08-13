@@ -1,0 +1,6 @@
+{"template": "चरण-दर-चरण सोचेर समस्या हल गर्नुहोस्।", "tags": ["cot"]}
+{"template": "Let's think step by step.", "tags": ["cot"]}
+{"template": "उत्तर दिनुअघि तर्क गर्नुहोस्।", "tags": ["cot", "reasoning"]}
+{"template": "तपाईंको जवाफको कारण पनि बताउनुहोस्।", "tags": ["cot", "explanation"]}
+{"template": "किन यो उत्तर हो? व्याख्या दिनुहोस्।", "tags": ["cot", "explanation"]}
+{"template": "निम्न परिस्थितिबाट के निष्कर्ष निकाल्न सकिन्छ?", "tags": ["cot", "implicit"]}

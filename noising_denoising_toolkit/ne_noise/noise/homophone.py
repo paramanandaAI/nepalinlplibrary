@@ -25,6 +25,17 @@ HOMOPHONE_MAP: Dict[str, List[str]] = {
     "ँ": ["ं"],
 }
 
+HOMONYM_WORD_MAP: Dict[str, str] = {
+    "फूल": "फुल",
+    "फुल": "फूल",
+    "दिन": "दीन",
+    "दीन": "दिन",
+    "सिट": "सीट",
+    "सीट": "सिट",
+    "पूरा": "पुरा",
+    "पुरा": "पूरा",
+}
+
 
 def get_homophone_map() -> Dict[str, List[str]]:
     """Return the Nepali homophone confusion pairs."""
@@ -49,3 +60,17 @@ def substitute_homophones(
         if ch in hm and r.random() < p:
             chars[i] = r.choice(hm[ch])
     return "".join(chars)
+
+
+def substitute_homonyms(
+    text: str,
+    p: float = 0.2,
+    rng: Optional[random.Random] = None,
+) -> str:
+    """Substitute word-level homonyms with probability ``p``."""
+    r = rng if rng is not None else random
+    words = text.split()
+    for i, w in enumerate(words):
+        if w in HOMONYM_WORD_MAP and r.random() < p:
+            words[i] = HOMONYM_WORD_MAP[w]
+    return " ".join(words)

@@ -3,6 +3,10 @@ Model-tier transliteration: optional lazy HuggingFace-backed wrapper.
 
 Used for out-of-dictionary words and natural romanization when a transliteration
 model is available. Falls back gracefully when models are not installed.
+
+TODO (our_shared_notes/modules/transliteration/indictranslit):
+- Integrate IndicTrans2 (ai4bharat/indictrans2-indic-indic) neural model pipeline
+  with direction-specific src_lang="ne_Deva" / tgt_lang="ne_Latn" prompt prefixes.
 """
 
 from typing import Optional
